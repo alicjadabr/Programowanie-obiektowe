@@ -72,3 +72,14 @@ fabric.properties
 
 # Android studio 3.1+ serialized cache file
 .idea/caches/build_file_checksums.ser
+src/lab02/.idea/vcs.xml
+src/lab02/.idea/modules.xml
+src/lab02/.idea/runConfigurations.xml
+src/lab02/.idea/misc.xml
+src/lab02/lab02.iml
+src/.idea/.name
+src/.idea/misc.xml
+src/.idea/modules.xml
+*.xml
+*.iml
+src/src/Zad_1.java
