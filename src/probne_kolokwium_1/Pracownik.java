@@ -6,17 +6,17 @@ public class Pracownik extends Osoba {
     private String stanowisko;
     private double pensja;
 
-    public Pracownik(String imie, String nazwisko, int year, int month, int day) {
-        super(imie, nazwisko, year, month, day);
+    public Pracownik(String imie, String nazwisko, LocalDate dataUrodzenia) {
+        super(imie, nazwisko, dataUrodzenia);
     }
 
     public Pracownik(Osoba o, String stanowisko, double pensja) {
-        super(o.imie(), o.nazwisko(), o.dataUrodzenia());
+        super(o.getImie(), o.getNazwisko(), o.getDataUrodzenia());
         this.stanowisko = stanowisko;
         this.pensja = pensja;
     }
 
-    public double pensja() {
+    public double getPensja() {
         return pensja;
     }
 

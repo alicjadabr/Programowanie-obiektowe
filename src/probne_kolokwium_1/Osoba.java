@@ -12,49 +12,44 @@ public class Osoba {
     public Osoba(String imie, String nazwisko, LocalDate dataUrodzenia) {
         this.imie = imie;
         this.nazwisko = nazwisko;
-        this.dataUrodzenia = dataUrodzenia;
+        checkDate(dataUrodzenia);
         this.wiek = obliczWiek();
     }
-    public Osoba(String imie, String nazwisko, int year, int month, int day) {
-        this.imie = imie;
-        this.nazwisko = nazwisko;
-
-        LocalDate today = LocalDate.now();
-        LocalDate dataDoWeryfikacji = LocalDate.of(year, month, day);
-        if (dataDoWeryfikacji.isAfter(today)) {
-            System.out.println("Data z przyszlosci!");
-        } else {
-            dataUrodzenia = LocalDate.of(year, month, day);
-        }
-        this.wiek = obliczWiek();
-    }
-
     private int obliczWiek() {
         LocalDate today = LocalDate.now();
         int w = Period.between(dataUrodzenia, today).getYears();
         return w;
     }
-
-    public String imie() {
+    private void checkDate(LocalDate dataUrodzenia) {
+        LocalDate today = LocalDate.now();
+        if (dataUrodzenia.isAfter(today)) {
+            System.out.println("Data z przyszlosci!");
+        } else {
+            this.dataUrodzenia = dataUrodzenia;
+        }
+    }
+    public String getImie() {
         return imie;
     }
-    public String nazwisko() {
+    public String getNazwisko() {
         return nazwisko;
     }
-    public LocalDate dataUrodzenia() {
+    public LocalDate getDataUrodzenia() {
         return dataUrodzenia;
     }
-    public int wiek() {
+    public int getWiek() {
         return wiek;
     }
-    public void ustawImie(String noweImie) {
+    public void setImie(String noweImie) {
         imie = noweImie;
     }
-    public void ustawNazwisko(String noweNazwisko) {
-        imie = noweNazwisko;
+    public void setNazwisko(String noweNazwisko) {
+        nazwisko = noweNazwisko;
     }
-    public void ustawDate(int y, int m, int d) {
-        dataUrodzenia = LocalDate.of(y, m, d);
+    public void setDataUrodzenia(int year, int month, int day) {
+        LocalDate date = LocalDate.of(year, month, day);
+        checkDate(date);
+        wiek = obliczWiek();
     }
     public String toString(){
         return "Osoba " + imie + " " + nazwisko + " urodzona " + dataUrodzenia + ", wiek " + wiek;
