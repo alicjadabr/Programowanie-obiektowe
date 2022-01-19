@@ -7,7 +7,10 @@ import java.util.Scanner;
 public class ReadFile {
     public static void main(String[] args) {
         ArrayList<String> lista = new ArrayList<>();
+        //sprawdzanie domyslnej sciezki:
+        // System.out.println(file.getAbsolutePath());
         File file = new File(args[0]);
+
         try {
             Scanner plik = new Scanner(file);
             while (plik.hasNextLine()) {

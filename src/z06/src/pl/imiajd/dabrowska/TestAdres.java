@@ -9,6 +9,7 @@ public class TestAdres {
         a2.pokaz();
         a3.pokaz();
         System.out.println(a2.przed("20-103"));
+        System.out.println(a1.przed("10-100"));
     }
 
 }

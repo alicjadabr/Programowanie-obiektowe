@@ -9,6 +9,12 @@ public class Student extends Osoba {
         super(o.getNazwisko(), o.getRokUrodzenia());
         this.kierunek = kierunek;
     }
+
+    public Student(String nazwisko, int rokUrodzenia, String kierunek) {
+        super(nazwisko, rokUrodzenia);
+        this.kierunek = kierunek;
+    }
+
     public String getKierunek() {
         return this.kierunek;
     }

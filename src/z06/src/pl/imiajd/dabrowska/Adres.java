@@ -33,27 +33,10 @@ public class Adres {
     }
 
     public boolean przed(String kod_pocztowy) {
-        StringBuilder sb = new StringBuilder().append(kod_pocztowy.charAt(0));
-        sb.append(kod_pocztowy.charAt(1));
-        int firstPart= Integer.parseInt(sb.toString());
-        StringBuilder sb2 = new StringBuilder().append(this.kod_pocztowy.charAt(0));
-        sb2.append(this.kod_pocztowy.charAt(1));
-        int kod_obiektu = Integer.parseInt(sb2.toString());
-        if(kod_obiektu < firstPart)
+        int kod_ob = Integer.parseInt(this.kod_pocztowy.replace("-", ""));
+        int kod2 = Integer.parseInt(kod_pocztowy.replace("-", ""));
+        if(kod_ob<kod2)
             return true;
-        else if(kod_obiektu == firstPart) {
-            StringBuilder sb3 = new StringBuilder().append(kod_pocztowy.charAt(3));
-            sb3.append(kod_pocztowy.charAt(4)).append(kod_pocztowy.charAt(5));
-            int secondPart = Integer.parseInt(sb3.toString());
-            StringBuilder sb4 = new StringBuilder().append(this.kod_pocztowy.charAt(3));
-            sb4.append(this.kod_pocztowy.charAt(4)).append(this.kod_pocztowy.charAt(5));
-            int kod_obiektu2 = Integer.parseInt(sb4.toString());
-            if(kod_obiektu2 < secondPart)
-                return true;
-            else
-                return false;
-        }
-        else
-            return false;
+        return false;
     }
 }

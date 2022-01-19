@@ -13,7 +13,7 @@ public class Osoba implements Cloneable, Comparable<Osoba> {
 
     @Override
     public String toString() {
-        return String.format("Osoba [%s], [%s]", nazwisko, dataUrodzenia.toString());
+        return String.format("%s [%s], [%s]", this.getClass().getSimpleName(), nazwisko, dataUrodzenia.toString());
     }
 
     @Override
@@ -23,19 +23,23 @@ public class Osoba implements Cloneable, Comparable<Osoba> {
         if (o == null || getClass() != o.getClass())
             return false;
         Osoba osoba = (Osoba) o;
-        if (this.nazwisko.equals(osoba.nazwisko) && this.dataUrodzenia.equals(osoba.dataUrodzenia)) {
-            return true;
-        }
-        return false;
+        if (!this.nazwisko.equals(osoba.nazwisko))
+            return false;
+        if (!this.dataUrodzenia.equals(osoba.dataUrodzenia))
+            return false;
+        return true;
     }
 
     @Override
     public int compareTo(Osoba o) {
+        // najpierw porownaj nazwiska
         int result = this.nazwisko.compareTo(o.nazwisko);
+        // jesli takie same, to date urodzenia
         if (result == 0) {
             result = -1 * this.dataUrodzenia.compareTo(o.dataUrodzenia);
             return result;
         }
         return result;
     }
+
 }

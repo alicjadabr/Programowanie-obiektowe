@@ -1,9 +1,5 @@
 package pl.imiajd.dabrowska;
 
-import pl.imiajd.dabrowska.Nauczyciel;
-import pl.imiajd.dabrowska.Osoba;
-import pl.imiajd.dabrowska.Student;
-
 public class TestOsoba {
     public static void main(String[] args) {
         Osoba o1 = new Osoba("Kowalska", 1998);
@@ -13,10 +9,8 @@ public class TestOsoba {
 
         Student s1 = new Student(o1, "Psychologia");
         Nauczyciel n1 = new Nauczyciel(o2, 3300);
-        System.out.println(s1.toString());
-        System.out.println(n1.toString());
-        System.out.println(o3.toString());
-
-
+        System.out.println(s1);
+        System.out.println(n1);
+        System.out.println(o3);
     }
 }

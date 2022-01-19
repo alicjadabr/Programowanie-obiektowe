@@ -6,5 +6,8 @@ public class TestRectangle {
         BetterRectangle r2 = new BetterRectangle(0, 7, 10,5);
         System.out.println(r1.getPerimeter());
         System.out.println(r1.getArea());
+        System.out.println(r2.getPerimeter());
+        System.out.println(r2.getArea());
+
     }
 }
